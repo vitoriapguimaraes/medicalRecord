@@ -1,76 +1,119 @@
-# ProgramaçaoII
-Esse repositório tem como principal objetivo guardar os códigos das aulas práticas da disciplina para aprimorar suas habilidades em vários tópicos, incluindo a criação e consumo de APIs com controle de autenticação utilizando NodeJS e utilizando boas práticas de programação e mercado.
+# MediApp - Sistema de Gestão Médica
 
-## 📚 Organização desse repositório
+> Sistema completo para gerenciamento de consultórios médicos, facilitando o agendamento de consultas, organização de prontuários eletrônicos e administração de pacientes. Projeto desenvolvido originalmente para a disciplina de Programação II e aprimorado com arquitetura moderna e novas funcionalidades.
 
-As pastas: ```Mod2, Mod4, Mod8, Mod9, Mod15``` possuem os exemplos das práticas feitas em aula. E a pasta ```Medi-App``` contém o projeto construindo nessa disciplina. Na raiz, temos o diagrama de entidade e relacionamento do projeto construído que tem a intenção de administrar um consultório médico.
+![Arquitetura do Sistema](docs/ConsultorioMedico-drawio.png)
 
-## 💻 Projeto da Disciplina
+## Funcionalidades Principais
 
-O projeto da disciplina tem a intenção de simular um consultório médico onde o médico é o administrador da consulta. A consulta pode ter prescrições (receitas) além do relacionamento com o médico. Abaixo temos o diagrama de entidade-relacionamento do projeto para melhor entendimento da estrutura - foi explicado em aula.
-> Clique na imagem para visualizar em tamanho original.
+- **Prontuário Eletrônico:** Registro detalhado do histórico clínico dos pacientes.
+- **Geração de Documentos:** Emissão automática de receitas médicas em PDF.
+- **Gestão de Pacientes:** Cadastro completo e busca eficiente de dados.
+- **Autenticação Segura:** Sistema de login com criptografia e tokens JWT.
+- **Interface Responsiva:** Design moderno construído com Next.js e Tailwind.
 
+## Tecnologias Utilizadas
 
-<img src="https://github.com/FaculdadeDescomplica/ProgramacaoII/blob/main/ConsultorioMedico-drawio.png" width=50% height=50%>
+### Frontend
 
-### ℹ️ Pré-requisitos
+- **Framework:** Next.js 14
+- **Linguagem:** TypeScript
+- **Estilização:** Tailwind CSS, Bootstrap
+- **Comunicação:** Axios
 
-Antes de começar, verifique se você atendeu aos seguintes requisitos:
+### Backend
 
-* Instalou a **versão mais recente** do `<Node.js>` de acordo com seu sistema operacional;
-  * para aula, foi utilizado o Windows 10/11
-* Instalou uma IDE da **sua preferência**;
-  * para aula, foi utilizado o VSCode
-* Instalou o navegador **da sua preferência**;
-  * para aula, foi utilizado o Google Chrome;
-* Instalou o Mongo DBCompass para trabalhar com MongoDB **(e assistiu o módulo 3)**;
-* Criou sua conta para utilizar o Postman. A instalação do Postman Desktop é **opcional**, pois você pode utilizar no navegador.
+- **Runtime:** Node.js
+- **Framework:** Express
+- **Banco de Dados:** MongoDB (Mongoose)
+- **Autenticação:** JWT (JSON Web Tokens), Bcrypt
+- **Testes:** Jest, MongoDB Memory Server
+- **Arquivos:** Multer (Uploads), PDFKit (Geração de PDFs)
 
-### ❗️Estrutura
+## Como Executar
 
-A estrutura **básica** do projeto está separada da seguinte forma:
-  
-    └── **RAIZ** MediApp/
-      ├── **FRONTEND** medi-app/
-      └── **BACKEND** src/
+### Pré-requisitos
 
-### 🚀 Execução do Projeto
+- Node.js instalado
+- MongoDB rodando localmente ou string de conexão configurada
 
-Foi explicada em aula várias vezes, mas segue:
-- o backend é subir um projeto node padrão, ``` node index.js ``` na raiz da pasta do backend ou utilizar o plugin CodeRunner como fizemos em aula;
-- e no frontend utilizando o comando ``` npm run dev ``` na raiz da pasta do frontend.
-> Lembrando que para subir as duas partes, você precisará de terminais e portas diferentes.
+### Passo 1: Clone o repositório
 
-**ATENÇÃO:** nas coleções de validação da aplicação via Postman, lembre-se de verificar (ou criar) o arquivo de ambiente (_environment_) e verificar a porta que sua aplicação está sendo disponibilizada. Implemente as requisições extras que você precisar.
+```bash
+git clone https://github.com/vitoriapguimaraes/medicalRecord.git
+```
 
-### ✨ Ajustes e melhorias
+### Passo 2: Configurar e Rodar o Backend
 
-O projeto está finalizado e para **garantir** o funcionamento correto, e **possíveis dúvidas** que você pode ter, foram feitas algumas alterações que podem ser encontradas nos commits abaixo.
-> Outras melhorias e funcionalidades são individuais e devem ser trabalhadas por cada aluno num projeto clonado.
+Navegue até a pasta do servidor:
 
-* Geral:
-  * [Git Ignore](https://github.com/FaculdadeDescomplica/ProgramacaoII/commit/766fd51091a4e0dee23d3b761400a0f96c3b0d25)
-* Backend:
-  * [Ajuste para trabalhar com arquivos](https://github.com/FaculdadeDescomplica/ProgramacaoII/commit/ee92317694760c94dcc36f723d0b61b76f67a6d8)
-  * [Ajuste para deletar consultas](https://github.com/FaculdadeDescomplica/ProgramacaoII/commit/344806e3bf408c9c8635b6c20d809cfb420407a3)
-* Frontend:
-  * [Ajuste para remover alerta do método map e melhoria de estilo](https://github.com/FaculdadeDescomplica/ProgramacaoII/commit/aaadf7a84a8484d3a368b99e234313bc7379c6ed)
-  * [Melhoria no uso do token](https://github.com/FaculdadeDescomplica/ProgramacaoII/commit/cc72707e3c18042ddc560f8483af15e643afea94)
-  * [Ajuste no método generatePrescription e alerta no método map](https://github.com/FaculdadeDescomplica/ProgramacaoII/commit/8356714db7bd1e967fc68a4b01fee2ef254ec086)
-  * [Criação das páginas de consultas](https://github.com/FaculdadeDescomplica/ProgramacaoII/commit/c5cbece68cd466e485660e53d2393f45df3c4fe0)
-  * [Criação da página de edição de doutores](https://github.com/FaculdadeDescomplica/ProgramacaoII/commit/629d46d401b794a8afc1ca07a0f508c9a93ef664)
-  * [Implementação da criação do paciente e criação da edição e lista de pacientes](https://github.com/FaculdadeDescomplica/ProgramacaoII/commit/31962d0edf2b56efab28f55e686ecd11ee843f23)
-  * [Mudança de estrutura e implementação da criação de prescrições](https://github.com/FaculdadeDescomplica/ProgramacaoII/commit/233297c617ff7e697e8bd618ee1d1ed49f5ec250)
-  * [Melhorias no estilo e inclusão das páginas na página inicial](https://github.com/FaculdadeDescomplica/ProgramacaoII/commit/f26331ee50c3a74a2deeeb8afc6c36d6bdba5a3b)
+```bash
+cd backend
+```
 
-### 📫 Contribuindo para o projeto
-<!---Se você foi aluno dessa disciplina e deseja contribuir com ajustes e/ou funcionalidades entre em contato com o responsável da sua aula e considere a criação de um arquivo CONTRIBUTING.md separado--->
-Para contribuir, siga estas etapas:
+Instale as dependências:
 
-1. Bifurque este repositório.
-2. Crie um branch: `git checkout -b <seu_nome_nome_funcionalidade>`.
-3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
-4. Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
-5. Crie a solicitação de pull.
+```bash
+npm install
+```
 
-Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+Execute o servidor:
+
+```bash
+# Para iniciar normalmente
+node index.js
+
+# Ou para rodar os testes
+npm test
+```
+
+### Passo 3: Configurar e Rodar o Frontend
+
+Em um novo terminal, navegue até a pasta da interface:
+
+```bash
+cd frontend
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Execute o projeto em modo de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+O frontend estará acessível em `http://localhost:3000`.
+
+## Estrutura de Diretórios
+
+```
+/medicalRecord
+├── backend/            # API Servidora (Node.js + Express)
+│   ├── models/         # Modelos do Banco de Dados
+│   ├── routes/         # Rotas da API
+│   ├── services/       # Lógica de negócio
+│   └── ...
+├── frontend/           # Interface do Usuário (Next.js + Tailwind)
+│   ├── src/            # Componentes e páginas
+│   ├── public/         # Arquivos estáticos
+│   └── ...
+├── docs/               # Documentação técnica e assets
+│   ├── ConsultorioMedico-drawio.png
+│   └── Collections do Postman
+└── README.md
+```
+
+## Status
+
+🚧 Em desenvolvimento
+
+> Veja as [issues abertas](https://github.com/vitoriapguimaraes/medicalRecord/issues) para sugestões de melhorias e próximos passos.
+
+## Mais Sobre Mim
+
+Acesse os arquivos disponíveis na [Pasta Documentos](https://github.com/vitoriapguimaraes/vitoriapguimaraes/tree/main/DOCUMENTOS) para mais informações sobre minhas qualificações e certificações.
