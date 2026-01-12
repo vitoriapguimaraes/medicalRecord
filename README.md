@@ -110,7 +110,7 @@ O frontend estará acessível em `http://localhost:3000`.
 
 ## Status
 
-🚧 Em desenvolvimento
+✅ Concluído
 
 > Veja as [issues abertas](https://github.com/vitoriapguimaraes/medicalRecord/issues) para sugestões de melhorias e próximos passos.
 
